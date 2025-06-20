@@ -1,0 +1,4 @@
+Essential Dependencies:
+ npm i express cors dotenv 
+Development Dependencies:
+ npm install --save-dev nodemon eslint prettier

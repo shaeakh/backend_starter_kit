@@ -1,0 +1,31 @@
+-- safer, avoids reserved keyword conflicts
+CREATE TABLE users (
+  uid UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT DEFAULT NULL,
+  email TEXT DEFAULT NULL,
+  phone TEXT DEFAULT NULL,
+  address TEXT DEFAULT NULL,
+  dob DATE DEFAULT NULL,
+  pic_url TEXT DEFAULT 'https://static.thenounproject.com/png/avatar-icon-881504-512.png'
+);
+
+CREATE TABLE preference (
+  uid UUID REFERENCES users(uid) ON DELETE CASCADE,
+  tag TEXT NOT NULL,
+  likes INTEGER DEFAULT 0,
+  dislikes INTEGER DEFAULT 0,
+  reads INTEGER DEFAULT 0,
+  PRIMARY KEY (uid, tag)
+);
+
+CREATE TABLE news (
+  nid UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  headline TEXT NOT NULL,
+  pic_url TEXT[] DEFAULT '{}',
+  writer TEXT[] DEFAULT '{}',
+  date DATE NOT NULL,
+  likes INTEGER DEFAULT 0,
+  dislikes INTEGER DEFAULT 0,
+  reads INTEGER DEFAULT 0,
+  tag TEXT[] DEFAULT '{}'
+);
