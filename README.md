@@ -73,13 +73,13 @@ Login with email and password.
 * email
 * password
 
-**Returns:** JWT token and user data.
+  **Returns:** JWT token and user data.
 
 **POST** `/api/auth/logout`
 Logs out the user by blacklisting the token (in-memory).
-**Headers:**
+  **Headers:**
 
-* Authorization: Bearer {token}
+  * Authorization: Bearer {token}
 
 ---
 
