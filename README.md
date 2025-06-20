@@ -17,8 +17,7 @@ A clean, modular, and ready-to-use backend starter kit built with **Express.js**
 
 ---
 
-### 📁 Folder Structure
-
+```
 src/
 ├── config/           → Supabase & env config
 ├── controllers/      → Request logic
@@ -26,6 +25,7 @@ src/
 ├── routes/           → API endpoints
 ├── app.js            → App initialization
 └── server.js         → Entry point
+```
 
 ---
 
@@ -51,10 +51,7 @@ JWT_SECRET=your_super_secret_key
 
 #### ✅ Health Check
 
-**GET** `/api/health`
-Returns server status and a sample query from Supabase.
 
----
 
 ### 🔐 Authentication APIs
 
